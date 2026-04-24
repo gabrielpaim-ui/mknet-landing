@@ -1,7 +1,12 @@
 import { OpenAI } from 'openai';
 import { NextResponse } from 'next/server';
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// Criamos a instância, mas garantimos que ela não quebre se a chave estiver vazia no build
+const openai = new OpenAI({ 
+  apiKey: process.env.OPENAI_API_KEY || 'chave_temporaria_para_build' 
+});
+
+export const dynamic = 'force-dynamic'; // Adicione esta linha para evitar que o Next tente pré-renderizar a API
 
 export async function POST(req: Request) {
   try {
