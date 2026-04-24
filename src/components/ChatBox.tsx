@@ -78,7 +78,7 @@ export default function ChatBox() {
           </div>
           <div className="flex flex-col">
             <span className="text-white font-black text-lg tracking-wider italic shadow-[#39ff14] drop-shadow-[0_0_5px_rgba(57,255,20,0.8)]">
-              Enrique
+              Henrique
             </span>
             <span className="text-[#39ff14] text-[10px] font-bold uppercase tracking-widest">
               Consultor de Vendas!

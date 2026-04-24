@@ -20,11 +20,18 @@ const faqs = [
   { q: "A internet rural tem a mesma velocidade?", a: "Sim. Utilizamos tecnologia de fibra óptica de ponta para garantir a ultra velocidade tanto na cidade quanto no campo." },
 ]
 
-// Animação de aparecimento gradual
+// Altere o seu objeto fadeIn para ficar exatamente assim:
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-}
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.6, 
+      ease: "easeOut" as const // O "as const" resolve o erro do TypeScript
+    } 
+  },
+};
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
